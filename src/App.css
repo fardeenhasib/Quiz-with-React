@@ -1,39 +1,63 @@
 body {
-  background-color: white;
+  background-color: #f6f9fc;
 }
 
-.board {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 10px;
+h1 {
+  text-align: center;
 }
 
-.line {
-  display: flex;
-  gap: 10px;
-  margin: auto;
+button {
+  cursor: pointer;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  background-color: #02203c;
+  color: white;
+  transition: 0.5s;
+  position: absolute;
 }
 
-.tile {
-  width: 40px;
-  height: 40px;
+button:first-of-type {
+  left: 16px;
+}
+
+button:last-of-type {
+  right: 16px;
+}
+
+button:disabled {
+  background-color: grey;
+}
+
+.answer {
+  cursor: pointer;
+  padding: 5px;
+  margin: 0;
+  border: 2px solid transparent;
+
+}
+
+.answer::before {
+  content: '';
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  padding: 1px;
+  border-radius: 50%;
+  margin-right: 5px;
   border: 1px solid black;
-  font-size: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-transform: capitalize;
+  padding: 2px;
 }
 
-.correct {
-  background-color: lightgreen;
-}
-
-.close {
-  background-color: yellow;
+.answer.correct::before,
+.answer.incorrect::before {
+  background: black content-box;
 }
 
 .incorrect {
-  background-color: lightgrey;
+  border: 2px solid red;
+}
+
+.correct {
+  border: 2px solid green;
 }
